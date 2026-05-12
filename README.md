@@ -16,7 +16,7 @@ URL `amqp://guest:guest@localhost:5672` adalah alamat koneksi ke RabbitMQ dengan
 
 Berikut adalah tampilan grafik RabbitMQ ketika subscriber berjalan lambat:
 
-![Slow Subscriber](images/slow-subscriber.png)
+![Slow Subscriber](images/slow-subscribe.png)
 
 Pada grafik "Queued messages" terlihat antrian pesan yang menumpuk. Hal ini terjadi karena subscriber dibuat lambat dengan menambahkan delay 1 detik (`thread::sleep`) untuk setiap pemrosesan pesan. Sementara itu, publisher dapat terus mengirimkan event dengan cepat. Akibatnya, pesan-pesan menumpuk di queue karena subscriber tidak mampu memproses secepat publisher mengirimkan event. Total queue di komputer saya mencapai sekitar 15 pesan karena publisher dijalankan beberapa kali secara cepat, masing-masing mengirimkan 5 event, sehingga total pesan yang masuk lebih banyak daripada yang bisa diproses subscriber dalam waktu yang sama.
 
