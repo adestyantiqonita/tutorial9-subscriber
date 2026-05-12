@@ -24,8 +24,8 @@ Pada grafik "Queued messages" terlihat antrian pesan yang menumpuk. Hal ini terj
 
 Berikut adalah tampilan RabbitMQ ketika 3 subscriber berjalan bersamaan:
 
-![Three Subscribers RabbitMQ](../subscriber/images/three-subscribers-rabbitmq.png)
-![Three Subscribers Console](../subscriber/images/three-subscribers-console.png)
+![Three Subscribers RabbitMQ](images/three-subscribers-rabbitmq.png)
+![Three Subscribers Console](images/three-subscribers-console.png)
 
 Dengan menjalankan 3 subscriber secara bersamaan, event yang dikirim publisher terbagi-bagi secara merata antar subscriber. Hal ini menyebabkan queue berkurang jauh lebih cepat dibandingkan hanya dengan 1 subscriber. Terlihat pada grafik bahwa spike Queued messages lebih cepat turun kembali ke 0.
 
